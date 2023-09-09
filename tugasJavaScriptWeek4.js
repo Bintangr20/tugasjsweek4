@@ -3,19 +3,17 @@ let randomArray = [];
 for (let i = 0; i < 100; i++) {
   randomArray.push(Math.floor(Math.random() * 50) + 1)
 }
+console.log(randomArray)
 // Memisahkan nilai-nilai berdasarkan indeksnya
 let arrayGanjil = []
 let arrayGenap = []
 
-for (let number of randomArray) {
-    //Nilai Genap
-    if(number % 2 ===0){
-        arrayGenap.push(number)
-    }
-    //Nilai Ganjil
-    else{
-        arrayGanjil.push(number)
-    }
+for (let i = 0; i < randomArray.length; i++) {
+  if (i % 2 === 0) {
+    arrayGenap.push(randomArray[i]);
+  } else {
+    arrayGanjil.push(randomArray[i]);
+  }
 }
 console.log(arrayGanjil)
 console.log(arrayGenap)
@@ -86,8 +84,10 @@ console.log(`Nilai rata-rata Genap adalah: ${averageResultGenap}`)
 let hasilPerbandinganMin = "";
 if (minResultGenap > minResultGanjil) {
   hasilPerbandinganMin += "Min lebih besar pada array genap\n";
-} else {
+} else if (minResultGenap > minResultGanjil){
   hasilPerbandinganMin += "Min lebih besar pada array ganjil\n";
+} else {
+  hasilPerbandinganMin += "Min memiliki nilai yang sama antara genap dan ganjil\n";
 } 
 console.log(hasilPerbandinganMin)
 
@@ -95,9 +95,11 @@ console.log(hasilPerbandinganMin)
 let hasilPerbandinganMax = ""
 if (maxResultGenap > maxResultGanjil) {
   hasilPerbandinganMax += "Max lebih besar pada array genap\n";
-} else {
+} else if (maxResultGenap > maxResultGanjil){
   hasilPerbandinganMax += "Max lebih besar pada array ganjil\n";
-}
+} else {
+  hasilPerbandinganMax += "Max memiliki nilai yang sama antara genap dan ganjil\n";
+} 
 console.log(hasilPerbandinganMax)
 
 //Perbandingan Total
